@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn57obc8lxbbq"]
+
+[ext_resource type="Script" uid="uid://bhvulegg313cf" path="res://Script/Base/GameManager.gd" id="1_70yv6"]
+[ext_resource type="Script" uid="uid://25tlf0wb0r6q" path="res://Script/Base/HexManager.gd" id="2_o2178"]
+[ext_resource type="Script" uid="uid://bxmufo2cepkm8" path="res://Script/Base/PieceManager.gd" id="3_d5upp"]
+
+[node name="GameManager" type="Node2D"]
+script = ExtResource("1_70yv6")
+
+[node name="HexManager" type="Node2D" parent="."]
+script = ExtResource("2_o2178")
+
+[node name="PieceManager" type="Node2D" parent="."]
+script = ExtResource("3_d5upp")
