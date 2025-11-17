@@ -5,7 +5,6 @@ class_name Hexagon
 @export var piece: Piece
 @export var available: bool = true
 @export var id: int
-
 #  TileMap information
 @export var tile_source_id: int = -1
 @export var tile_atlas_coords: Vector2i = Vector2i.ZERO
