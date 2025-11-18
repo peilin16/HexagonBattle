@@ -9,4 +9,4 @@ func _ready() -> void:
 	_piece = Piece.new()
 	_piece.name = "TestPiece"
 	_piece.Team = Piece.TEAM.PLAYER;
-	GameManager.Piece_Manager.spawn_piece(self, Vector2i(2, 2)); #specify the cell
+	GameManager.Piece_Manager.spawn_piece(self, Vector2i(0, 1)); #specify the cell

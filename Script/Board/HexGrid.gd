@@ -2,7 +2,7 @@ extends Node2D
 class_name Hex_Grid
 @onready var tilemap_layer = $TileMap/TileMapLayer
 
-@export var radius: int = 3
+@export var radius: int = 2
 
 func _ready():
 	GameManager.Hex_Manager.register_map(tilemap_layer);
