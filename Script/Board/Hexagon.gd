@@ -2,8 +2,13 @@ extends Resource
 class_name Hexagon
 #hexagon information vessel
 @export var position: Vector2i
-@export var piece: Piece
+var piece
 @export var available: bool = true
+
+@export var tile: Tile;
+
+
+
 @export var id: int
 #  TileMap information
 @export var tile_source_id: int = -1

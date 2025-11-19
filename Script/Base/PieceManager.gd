@@ -30,7 +30,39 @@ func spawn_piece(piece_unit: Test_Piece_Controller, cell: Vector2i) -> void:
 
 	# 4. bind Hexagon information
 	var hex = GameManager.Hex_Manager.get_hex_at(cell)
-	hex.piece = piece_unit._piece;
+	hex.piece = piece_unit;
 	piece_unit._piece.hexagon = hex;
-func place_piece(piece:Piece, position: Vector2i)->void:
-	pass
+	
+	
+	
+func place_piece(piece_unit, cell: Vector2i) -> void:
+	var map = GameManager.Hex_Manager.get_map()
+	if map == null:
+		return
+
+	# 1. clear hex
+	var old_hex = piece_unit._piece.hexagon
+	if old_hex != null:
+		old_hex.piece = null
+
+	# 2.check the piece at new hex
+	var new_hex :Hexagon= GameManager.Hex_Manager.get_hex_at(cell);
+	if new_hex == null:
+		return
+
+	if new_hex.piece != null:
+		print("can not move")
+		return
+
+	# 3. update logica
+	new_hex.piece = piece_unit
+	piece_unit._piece.hexagon = new_hex
+
+	# 4. move to new hex
+	var local_pos: Vector2 = map.map_to_local(cell)
+	piece_unit.global_position = map.to_global(local_pos)
+
+	#var unit: Node2D = piece_to_unit.get(piece_unit.piece, null)
+	#if unit:
+		#var local_pos: Vector2 = map.map_to_local(cell)
+		#unit.global_position = map.to_global(local_pos)
