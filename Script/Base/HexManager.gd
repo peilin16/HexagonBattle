@@ -34,7 +34,7 @@ func _init_hexes_from_tilemap(max_count: int) -> void:
 		hex.tile_source_id = tileMapLayer.get_cell_source_id(cell)
 		hex.tile_atlas_coords = tileMapLayer.get_cell_atlas_coords(cell)
 		hex.tile_alt_id = tileMapLayer.get_cell_alternative_tile(cell)
-
+		
 
 		var tile_data = tileMapLayer.get_cell_tile_data(cell)
 		if tile_data and tile_data.has_custom_data("terrain_type"):
