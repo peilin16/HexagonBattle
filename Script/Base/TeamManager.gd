@@ -7,20 +7,19 @@ var ALLIES: Array[Piece] = []
 var ENEMIES: Array[Piece] = []
 
 func _ready() -> void:
-   
 	_create_starting_pieces()
 
 
 func _create_starting_pieces() -> void:
 	for i in 3:
 		var ally := Piece.new()
-		ally.name = "Ally_%d" % i
+		ally.piece_data.name = "Ally_%d" % i
 		ally.Team = Piece.TEAM.PLAYER
 		ALLIES.append(ally)
 
 	for i in 3:
 		var enemy := Piece.new()
-		enemy.name = "Enemy_%d" % i
+		enemy.piece_data.name = "Enemy_%d" % i
 		enemy.Team = Piece.TEAM.ENEMY
 		ENEMIES.append(enemy)
 

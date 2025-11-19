@@ -7,4 +7,6 @@ enum TEAM{PLAYER, ENEMY}
 @export var target : String;
 @export var Team: TEAM = TEAM.PLAYER;
 @export var position: Vector2i
-@export var piece: Piece_data
+@export var piece_data: Piece_data
+func _init()->void:
+	piece_data  = Piece_data.new();

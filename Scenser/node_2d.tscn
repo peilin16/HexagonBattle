@@ -841,12 +841,14 @@ texture_region_size = Vector2i(84, 96)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7pbvy"]
 texture = ExtResource("137_ph5j4")
-texture_region_size = Vector2i(84, 96)
+texture_region_size = Vector2i(96, 96)
+0:0/next_alternative_id = 3
 0:0/0 = 0
+0:0/2 = 2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iy0al"]
 texture = ExtResource("138_5dw3w")
-texture_region_size = Vector2i(84, 96)
+texture_region_size = Vector2i(97, 96)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2dpi3"]
@@ -971,7 +973,7 @@ texture_region_size = Vector2i(84, 96)
 
 [sub_resource type="TileSet" id="TileSet_5fipt"]
 tile_shape = 3
-tile_size = Vector2i(84, 96)
+tile_size = Vector2i(96, 96)
 sources/1 = SubResource("TileSetAtlasSource_qilgh")
 sources/2 = SubResource("TileSetAtlasSource_whnp6")
 sources/3 = SubResource("TileSetAtlasSource_akb8o")
@@ -1145,7 +1147,7 @@ offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="HexGrid/TileMap"]
-tile_map_data = PackedByteArray("AAD/////BQAAAAAAAGAAAAAABQAAAAAAAGD//wAAAgAAAAAAAGD+////AgAAAAAAAGD///7/AgAAAAAAAFAAAP7/AgAAAAAAAFAAAAEAewAAAAAAAGABAAEAewAAAAAAAGACAAEAewAAAAAAAGACAAIAewAAAAAAAGABAAIAewAAAAAAAGAAAAIAewAAAAAAAGADAAIAewAAAAAAAGADAAEAewAAAAAAAGABAAAAfgAAAAAAAGACAAAAfgAAAAAAAGADAAAAfgAAAAAAAGAEAAAAfgAAAAAAAGA=")
+tile_map_data = PackedByteArray("AAD/////BQAAAAAAAGAAAAAABQAAAAAAAGD//wAAAgAAAAAAAGD+////AgAAAAAAAGD///7/AgAAAAAAAFAAAP7/AgAAAAAAAFAAAAEAewAAAAAAAGABAAEAewAAAAAAAGACAAEAewAAAAAAAGACAAIAewAAAAAAAGABAAIAewAAAAAAAGAAAAIAewAAAAAAAGADAAIAewAAAAAAAGADAAEAewAAAAAAAGABAAAAfgAAAAAAAGACAAAAfgAAAAAAAGADAAAAfgAAAAAAAGAEAAAAfgAAAAAAAGABAAMASwAAAAAAAGA=")
 tile_set = SubResource("TileSet_5fipt")
 
 [node name="TestPiece" parent="." instance=ExtResource("163_hjhgq")]
