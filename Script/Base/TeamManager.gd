@@ -13,7 +13,6 @@ func _ready() -> void:
 	
 
 
-
 func _create_starting_pieces( ally_piece_names: Array[String] = [], enemy_piece_names: Array[String] = []) -> void:
 	ALLIES.clear()
 	ENEMIES.clear()

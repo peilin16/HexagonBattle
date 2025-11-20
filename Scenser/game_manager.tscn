@@ -16,6 +16,7 @@ script = ExtResource("2_o2178")
 
 [node name="PieceManager" type="Node2D" parent="."]
 script = ExtResource("3_d5upp")
+pieces_folder = "<null>"
 
 [node name="Operation" type="Node2D" parent="."]
 script = ExtResource("4_kws3m")
