@@ -4,11 +4,8 @@ class_name Piece_Manger
 @export var hex_manager: Hex_Manger        # 
 
 @export var piece_to_unit: Dictionary = {}     # Piece -> cell active piece
-@export var piece_dict:Dictionary = {
+@export var piece_dict :Dictionary[String, PackedScene]  = {
 	"Test_Piece": preload("res://Scenser/Piece_Scenser/test_piece.tscn")
-	
-	
-	
 }         # piece dict
 var selected_piece: Piece = null       #
 @export_dir var pieces_folder: String = "res://Scenser/Piece_Scenser"  
@@ -27,10 +24,11 @@ func _register_piece(piece_unit)->void:
 
 
 #get piece
-func get_piece(piece_name:String):
+func get_piece(piece_name:String)->Piece_Controller:
 	if not piece_dict.has(piece_name):	
 		return
 	var scene: PackedScene = piece_dict[piece_name];
+	#scene._piece_name = piece_name;
 	var instance: Piece_Controller = scene.instantiate()
 	return instance;
 	
