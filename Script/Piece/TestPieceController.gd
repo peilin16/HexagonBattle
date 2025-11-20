@@ -2,11 +2,14 @@ extends Piece_Controller
 class_name Test_Piece_Controller
 
 
-@export var _piece: Piece        
-#var hex_coord: Vector2i       
-#var position: Vector2i;
+
+
+
 func _ready() -> void:
+	_piece_name = "Test_Piece";
+
 	_piece = Piece.new()
 #	_piece.name = "TestPiece"
 	_piece.Team = Piece.TEAM.PLAYER;
-	GameManager.Piece_Manager.spawn_piece(self, Vector2i(0, 1)); #specify the cell
+	GameManager.Piece_Manager._register_piece(self);
+	

@@ -2,18 +2,32 @@ extends Node2D
 class_name Piece_Manger
 
 @export var hex_manager: Hex_Manger        # 
-@export var piece_scene: PackedScene       # 
 
-var piece_to_unit: Dictionary = {}     # Piece -> cell
+var piece_to_unit: Dictionary = {}     # Piece -> cell active piece
+var piece_dict:Dictionary = {}         # piece dict
 var selected_piece: Piece = null       #
+
+
+
 func _ready() -> void:
 	# example：spawn test piece at (0, 1)
 	#spawn_piece_on_cell(Vector2i(0, 1), "Player", Piece.TEAM.PLAYER)
 	pass
 
+func _register_piece(piece_unit)->void:
+	if not piece_dict.has(piece_unit._piece_name):	
+		piece_dict[piece_unit._piece_name] = piece_unit;
 
 
-
+#get piece
+func get_piece(piece_name:String):
+	if not piece_dict.has(piece_name):	
+		return
+	var piece = piece_dict[piece_name];
+	var new_piece = piece.new();
+	return new_piece;
+	
+#spawn piece
 func spawn_piece(piece_unit: Test_Piece_Controller, cell: Vector2i) -> void:
 	var map = GameManager.Hex_Manager.get_map()
 	if map == null:
@@ -34,7 +48,7 @@ func spawn_piece(piece_unit: Test_Piece_Controller, cell: Vector2i) -> void:
 	piece_unit._piece.hexagon = hex;
 	
 	
-	
+#place piece function
 func place_piece(piece_unit, cell: Vector2i) -> void:
 	var map = GameManager.Hex_Manager.get_map()
 	if map == null:
