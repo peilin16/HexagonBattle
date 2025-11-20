@@ -1,4 +1,4 @@
-[gd_scene load_steps=326 format=4 uid="uid://cgf2wol10t746"]
+[gd_scene load_steps=325 format=4 uid="uid://cgf2wol10t746"]
 
 [ext_resource type="Script" uid="uid://c12vakfncpk8u" path="res://Script/Board/HexGrid.gd" id="1_2s6du"]
 [ext_resource type="Texture2D" uid="uid://481h5aetc5nk" path="res://assets/x96/PixelHex1_96x_0767_Volcano.png" id="2_hjhgq"]
@@ -162,7 +162,6 @@
 [ext_resource type="Texture2D" uid="uid://stqi3h2dpfmt" path="res://assets/x96/PixelHex1_96x_0941_Ocean.png" id="160_ror4w"]
 [ext_resource type="Texture2D" uid="uid://dl0dt5s5gifxh" path="res://assets/x96/PixelHex1_96x_0942_Ocean.png" id="161_aflpb"]
 [ext_resource type="Texture2D" uid="uid://c7gbwjkge8xow" path="res://assets/x96/PixelHex1_96x_0943_Ocean.png" id="162_g1qp5"]
-[ext_resource type="PackedScene" uid="uid://sy7lchy5b2eo" path="res://Scenser/test_piece.tscn" id="163_hjhgq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qilgh"]
 texture = ExtResource("2_hjhgq")
@@ -1149,9 +1148,6 @@ metadata/_edit_use_anchors_ = true
 [node name="TileMapLayer" type="TileMapLayer" parent="HexGrid/TileMap"]
 tile_map_data = PackedByteArray("AAD/////BQAAAAAAAGAAAAAABQAAAAAAAGD//wAAAgAAAAAAAGD+////AgAAAAAAAGD///7/AgAAAAAAAFAAAP7/AgAAAAAAAFAAAAEAewAAAAAAAGABAAEAewAAAAAAAGACAAEAewAAAAAAAGACAAIAewAAAAAAAGABAAIAewAAAAAAAGAAAAIAewAAAAAAAGADAAIAewAAAAAAAGADAAEAewAAAAAAAGABAAAAfgAAAAAAAGACAAAAfgAAAAAAAGADAAAAfgAAAAAAAGAEAAAAfgAAAAAAAGABAAMASwAAAAAAAGA=")
 tile_set = SubResource("TileSet_5fipt")
-
-[node name="TestPiece" parent="." instance=ExtResource("163_hjhgq")]
-position = Vector2(100, 67)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(200, 100)

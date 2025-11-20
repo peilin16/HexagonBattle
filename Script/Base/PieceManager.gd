@@ -3,19 +3,26 @@ class_name Piece_Manger
 
 @export var hex_manager: Hex_Manger        # 
 
-var piece_to_unit: Dictionary = {}     # Piece -> cell active piece
-var piece_dict:Dictionary = {}         # piece dict
+@export var piece_to_unit: Dictionary = {}     # Piece -> cell active piece
+@export var piece_dict:Dictionary = {
+	"Test_Piece": preload("res://Scenser/Piece_Scenser/test_piece.tscn")
+	
+	
+	
+}         # piece dict
 var selected_piece: Piece = null       #
-
-
+@export_dir var pieces_folder: String = "res://Scenser/Piece_Scenser"  # 在 Inspector 里选一个目录
+@export var sce: PackedScene   # bullet_scene
 
 func _ready() -> void:
 	# example：spawn test piece at (0, 1)
 	#spawn_piece_on_cell(Vector2i(0, 1), "Player", Piece.TEAM.PLAYER)
+	#_register_all_piece_scenes_from_folder();
 	pass
 
+			
 func _register_piece(piece_unit)->void:
-	if not piece_dict.has(piece_unit._piece_name):	
+	if piece_dict.has(piece_unit._piece_name) == false:	
 		piece_dict[piece_unit._piece_name] = piece_unit;
 
 
@@ -23,9 +30,9 @@ func _register_piece(piece_unit)->void:
 func get_piece(piece_name:String):
 	if not piece_dict.has(piece_name):	
 		return
-	var piece = piece_dict[piece_name];
-	var new_piece = piece.new();
-	return new_piece;
+	var scene: PackedScene = piece_dict[piece_name];
+	var instance: Piece_Controller = scene.instantiate()
+	return instance;
 	
 #spawn piece
 func spawn_piece(piece_unit: Test_Piece_Controller, cell: Vector2i) -> void:
@@ -33,7 +40,7 @@ func spawn_piece(piece_unit: Test_Piece_Controller, cell: Vector2i) -> void:
 	if map == null:
 		push_warning("TileMapLayer not registered in Hex_Manger.")
 		return
-
+	
 	# 1. add child node
 	add_child(piece_unit)
 
@@ -71,7 +78,7 @@ func place_piece(piece_unit, cell: Vector2i) -> void:
 	# 3. update logica
 	new_hex.piece = piece_unit
 	piece_unit._piece.hexagon = new_hex
-
+	
 	# 4. move to new hex
 	var local_pos: Vector2 = map.map_to_local(cell)
 	piece_unit.global_position = map.to_global(local_pos)

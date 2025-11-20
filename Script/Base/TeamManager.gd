@@ -10,7 +10,7 @@ var ENEMIES: Array[Node2D] = []
 func _ready() -> void:
 	await get_tree().create_timer(0.1).timeout
 	_create_starting_pieces()
-
+	
 #This method still in construction
 func _create_starting_pieces() -> void:
 	for i in 3:
@@ -33,12 +33,11 @@ func _create_starting_pieces() -> void:
 		#ALLIES.append(new_piece)
 
 #regist team
-func register_piece(piece: Piece) -> void:
-	match piece.Team:
-		Piece.TEAM.PLAYER:
-			ALLIES.append(piece)
-		Piece.TEAM.ENEMY:
-			ENEMIES.append(piece)
+func register_enemy_piece(piece: Piece) -> void:
+	#piece.TEAM =Piece.
+	ALLIES.append(piece)
+
+	ENEMIES.append(piece)
 
 
 # draw ally
