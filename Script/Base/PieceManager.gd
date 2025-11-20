@@ -4,8 +4,9 @@ class_name Piece_Manger
 @export var hex_manager: Hex_Manger        # 
 
 var piece_to_unit: Dictionary = {}     # Piece -> cell active piece
+
 var piece_dict:Dictionary = {}         # piece dict
-var selected_piece: Piece = null       #
+
 
 
 
@@ -24,7 +25,9 @@ func get_piece(piece_name:String):
 	if not piece_dict.has(piece_name):	
 		return
 	var piece = piece_dict[piece_name];
-	var new_piece = piece.new();
+	var new_piece = Piece_Controller.new();
+	new_piece._piece =piece._piece.duplicate();
+	new_piece._piece_name = piece._piece_name;
 	return new_piece;
 	
 #spawn piece
@@ -80,3 +83,11 @@ func place_piece(piece_unit, cell: Vector2i) -> void:
 	#if unit:
 		#var local_pos: Vector2 = map.map_to_local(cell)
 		#unit.global_position = map.to_global(local_pos)
+		
+#get piece name for random
+func get_random_piece_names(count: int) -> Array[String]:
+	var names: Array[String] = piece_dict.keys()
+	names.shuffle()
+	if count < names.size():
+		names.resize(count)
+	return names
